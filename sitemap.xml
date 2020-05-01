@@ -28,6 +28,14 @@
   </url>
   
   <url>
+    <loc>https://example.com/authors/ho0kim/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/authors/</loc>
+  </url>
+  
+  <url>
     <loc>https://example.com/categories/</loc>
   </url>
   
