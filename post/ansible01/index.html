@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Ansible 이란? | 
+    IT 읽어주는 블로그
+  
+</title><meta name="description" content="어떤 시선으로 기술을 바라봐야 할까?"><meta name="author" content="Hoyeong Kim">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/favicon-32x32.png " sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0c344b">
+<link rel="icon" href="/favicon.ico">
+
+
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.37ab3f61b95417873748.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="/post/ansible01/"><meta property="og:title" content="Ansible 이란?" />
+<meta property="og:description" content="Ansible 이란?  코드 형태로 서버의 세팅을 정의해놓고 (playbook) 정의된 코드를 대상이 되는 호스트에 배포함으로서 서버를 세팅 하는 역할
+ Ansible은 IT자동화 도구로써, 인프라의 상태를 코드로 정의( IaC)하고 이를 대상이 되는 서버들에 배포함으로서 인프라 환경을 동일하게 유지할 수 있게 돕는 역할을 한다.
+Ansible의 장점  한번 코드형태로 서버 세팅을 정의 해놓으면 여러 서버를 동일 환경으로 쉽게 구성할 수 있음
+(회사의 서버을 표준화하는대에 용이함) SSH를 활용하여 배포하여 별도 agent설치가 필요 없음 서버 세팅에 대한 멱등성(Idempotency)을 제공함  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/ansible01/" />
+<meta property="og:image" content="/images/ansible01.png" />
+<meta property="article:published_time" content="2020-05-03T01:45:33+09:00" />
+<meta property="article:modified_time" content="2020-05-03T01:45:33+09:00" />
+<meta itemprop="name" content="Ansible 이란?">
+<meta itemprop="description" content="Ansible 이란?  코드 형태로 서버의 세팅을 정의해놓고 (playbook) 정의된 코드를 대상이 되는 호스트에 배포함으로서 서버를 세팅 하는 역할
+ Ansible은 IT자동화 도구로써, 인프라의 상태를 코드로 정의( IaC)하고 이를 대상이 되는 서버들에 배포함으로서 인프라 환경을 동일하게 유지할 수 있게 돕는 역할을 한다.
+Ansible의 장점  한번 코드형태로 서버 세팅을 정의 해놓으면 여러 서버를 동일 환경으로 쉽게 구성할 수 있음
+(회사의 서버을 표준화하는대에 용이함) SSH를 활용하여 배포하여 별도 agent설치가 필요 없음 서버 세팅에 대한 멱등성(Idempotency)을 제공함  ">
+<meta itemprop="datePublished" content="2020-05-03T01:45:33&#43;09:00" />
+<meta itemprop="dateModified" content="2020-05-03T01:45:33&#43;09:00" />
+<meta itemprop="wordCount" content="72">
+<meta itemprop="image" content="/images/ansible01.png">
+
+
+
+<meta itemprop="keywords" content="ansible," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/images/ansible01.png"/>
+
+<meta name="twitter:title" content="Ansible 이란?"/>
+<meta name="twitter:description" content="Ansible 이란?  코드 형태로 서버의 세팅을 정의해놓고 (playbook) 정의된 코드를 대상이 되는 호스트에 배포함으로서 서버를 세팅 하는 역할
+ Ansible은 IT자동화 도구로써, 인프라의 상태를 코드로 정의( IaC)하고 이를 대상이 되는 서버들에 배포함으로서 인프라 환경을 동일하게 유지할 수 있게 돕는 역할을 한다.
+Ansible의 장점  한번 코드형태로 서버 세팅을 정의 해놓으면 여러 서버를 동일 환경으로 쉽게 구성할 수 있음
+(회사의 서버을 표준화하는대에 용이함) SSH를 활용하여 배포하여 별도 agent설치가 필요 없음 서버 세팅에 대한 멱등성(Idempotency)을 제공함  "/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand font-weight-bold" href="/">IT 읽어주는 블로그</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+            <ul class="navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/post">Post</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/categories">Category</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tags">Tag</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                
+            
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">May 3, 2020</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>72 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>1 min read</span>
+                        </div>
+
+                        <h1>Ansible 이란?</h1>
+
+                        <ul class="authors list-inline"></ul>
+                    </div>
+                </div><div class="row justify-content-center mb-3">
+                                <div class="col-lg-10">
+                                    <img data-src="/images/ansible01_hub884469535c087589ce6d86f0418926d_8020_900x500_fit_box_2.png"  class="img-fluid rounded mx-auto d-block" alt="Ansible 이란?">
+                                </div>
+                            </div><div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <h2 id="ansible-이란">Ansible 이란?</h2>
+<blockquote>
+<p>코드 형태로 서버의 세팅을 정의해놓고  (playbook)
+정의된  코드를 대상이 되는 호스트에 배포함으로서 서버를 세팅  하는 역할</p>
+</blockquote>
+<p>Ansible은  IT자동화  도구로써, 인프라의 상태를 코드로  정의( IaC)하고 이를 대상이 되는 서버들에 배포함으로서  인프라  환경을 동일하게 유지할 수 있게 돕는 역할을 한다.</p>
+<h2 id="ansible의-장점">Ansible의 장점</h2>
+<ul>
+<li>한번 코드형태로 서버 세팅을 정의 해놓으면 여러 서버를 동일 환경으로 쉽게 구성할 수  있음<br>
+(회사의 서버을 표준화하는대에 용이함)</li>
+<li>SSH를 활용하여 배포하여 별도 agent설치가 필요 없음</li>
+<li>서버 세팅에 대한 멱등성(Idempotency)을 제공함</li>
+</ul>
+
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/ansible">
+                                    <i class="fas fa-tag mr-2"></i>ansible
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=%2fpost%2fansible01%2f&text=Ansible%20%ec%9d%b4%eb%9e%80%3f">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=%2fpost%2fansible01%2f&title=Ansible%20%ec%9d%b4%eb%9e%80%3f">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=%2fpost%2fansible01%2f&t=Ansible%20%ec%9d%b4%eb%9e%80%3f">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=%2fpost%2fansible01%2f&title=Ansible%20%ec%9d%b4%eb%9e%80%3f">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                        <a href="mailto:hoyoung7413@gmail.com" class="icons d-block">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li><li class="list-inline-item">
+                            <a href="https://github.com/ho0kim" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/hoyeong-kim-4a1982157/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-muted">
+                    
+                        Copyright © 2020, Hoyeong Kim
+                    
+                </p>
+
+                <p class="text-muted">
+                Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with <a href="https://github.com/puresyntax71/hugo-theme-chunky-poster" target="_blank">Chunky Poster</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.d608eadfe5ac0688902e.min.js"></script>
+        
+    
+
+
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXX', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

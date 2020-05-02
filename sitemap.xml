@@ -3,12 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-05-02T17:33:27+09:00</lastmod>
+    <loc>/tags/ansible/</loc>
+    <lastmod>2020-05-03T01:45:33+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/ansible01/</loc>
+    <lastmod>2020-05-03T01:45:33+09:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2020-05-03T01:45:33+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-05-03T01:45:33+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
     <lastmod>2020-05-02T17:33:27+09:00</lastmod>
   </url>
   
@@ -32,10 +47,6 @@
   
   <url>
     <loc>/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
   </url>
   
 </urlset>

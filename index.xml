@@ -5,12 +5,24 @@
     <link>/</link>
     <description>Recent content on IT 읽어주는 블로그</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>kr</language>
+    <language>en</language>
     <copyright>Copyright © 2020, Hoyeong Kim</copyright>
-    <lastBuildDate>Sat, 02 May 2020 17:33:27 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2020 01:45:33 +0900</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible 이란?</title>
+      <link>/post/ansible01/</link>
+      <pubDate>Sun, 03 May 2020 01:45:33 +0900</pubDate>
+      
+      <guid>/post/ansible01/</guid>
+      <description>Ansible 이란?  코드 형태로 서버의 세팅을 정의해놓고 (playbook) 정의된 코드를 대상이 되는 호스트에 배포함으로서 서버를 세팅 하는 역할
+ Ansible은 IT자동화 도구로써, 인프라의 상태를 코드로 정의( IaC)하고 이를 대상이 되는 서버들에 배포함으로서 인프라 환경을 동일하게 유지할 수 있게 돕는 역할을 한다.
+Ansible의 장점  한번 코드형태로 서버 세팅을 정의 해놓으면 여러 서버를 동일 환경으로 쉽게 구성할 수 있음
+(회사의 서버을 표준화하는대에 용이함) SSH를 활용하여 배포하여 별도 agent설치가 필요 없음 서버 세팅에 대한 멱등성(Idempotency)을 제공함  </description>
+    </item>
     
     <item>
       <title>What is software?</title>
