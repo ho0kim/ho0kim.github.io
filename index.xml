@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2020, Hoyeong Kim</copyright>
-    <lastBuildDate>Mon, 04 May 2020 16:24:18 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2020 18:58:57 +0900</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Sun, 10 May 2020 18:58:57 +0900</pubDate>
+      
+      <guid>/about/</guid>
+      <description>말하기와 글쓰기는 분명한 차이를 가진다.
+말하기는
+그 때의 제스처나 말투 등, 듣는 사람과의 많은 것을 공유하는 상황에서 정보가 전달 된다.
+하지만 글쓰기는 다르다.
+글쓰기는 정보 전달의 대상이 되는 사람에게 전달되는 글 외에 어떠한 정도도 전달되지 않는다.
+더욱 정확해야하고 명확해야한다.
+명료하고 정확한 전달력을 키우기 위해 글쓰기를 하려한다.
+As is
+Software Engineer
+To be
+Technical Architecture (Cloud Expert)</description>
+    </item>
     
     <item>
       <title>로드밸런서란 무엇인가?</title>
